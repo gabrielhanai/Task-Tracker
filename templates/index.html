@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<span id="status">
+    <span>
+        <h1>TO DO</h1>
+        <ol id="todo">
+            {% for tarefa in todos %}
+                <li>{{ tarefa }}</li>
+            {% endfor %}
+        </ol>
+    </span>
+    <span>
+        <h1>DOING</h1>
+        <ol id="doing">
+            {% for tarefa in doings %}
+                <li>{{ tarefa }}</li>
+            {% endfor %}
+        </ol>
+    </span>
+    <span>
+        <h1>DONE</h1>
+        <ol id="done">
+            {% for tarefa in dones %}
+                <li>{{ tarefa }}</li>
+            {% endfor %}
+        </ol>
+    </span>
+</span>
+
+<form action="/addtodo" method="post">
+    <div class="input-group">
+        <span class="input-group-text">To do</span>
+        <textarea class="form-control" aria-label="With textarea" name="todo"></textarea>
+        <button class="btn btn-primary" type="submit">Add</button>
+    </div>
+</form>
+
+<form action="/adddoing" method="post">
+    <div class="input-group">
+        <span class="input-group-text">Doing</span>
+        <textarea class="form-control" aria-label="With textarea" name="doing"></textarea>
+        <button class="btn btn-primary" type="submit">Add</button>
+    </div>
+</form>
+
+<form action="/adddone" method="post">
+    <div class="input-group">
+        <span class="input-group-text">Done</span>
+        <textarea class="form-control" aria-label="With textarea" name="done"></textarea>
+        <button class="btn btn-primary" type="submit">Add</button>
+    </div>
+</form>
+
+<form action="/limpar" method="post">
+    <button id="limpar" type="submit" class="btn btn-primary btn-lg btn-block">Limpar todas as listas</button>
+</form>
+</body>
+</html>

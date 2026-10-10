@@ -1,0 +1,38 @@
+body{
+    background-color: hsl(0, 0%, 85%);
+}
+#status {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 2rem;
+    width: min(100% - 2rem, 1400px);
+    margin: 2rem auto;
+}
+#status > span {
+    min-width: 0;
+}
+form{
+    position: relative;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+}
+ol{
+    width: 100%;
+    min-height: 240px;
+    height: min(600px, 60vh);
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: none;
+    background-color: white;
+    overflow-y: auto;
+    overflow-wrap: anywhere;
+}
+h1{
+    margin: 0 0 0.75rem;
+    text-align: center;
+}
+#limpar{
+    width: 94.5%;
+}
